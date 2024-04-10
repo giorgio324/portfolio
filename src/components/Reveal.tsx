@@ -10,7 +10,6 @@ type Props = {
 const Reveal = ({ children, width }: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true });
-
   const mainControls = useAnimation();
   const slideControls = useAnimation();
   useEffect(() => {

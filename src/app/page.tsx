@@ -1,4 +1,5 @@
 import Reveal from '@/components/Reveal';
+import Visible from '@/components/Visible';
 
 const page = () => {
   return (
@@ -19,6 +20,7 @@ const page = () => {
         <h1>Hello</h1>
         <p>i am giorgi</p>
       </Reveal>
+      <Visible>test</Visible>
     </>
   );
 };
