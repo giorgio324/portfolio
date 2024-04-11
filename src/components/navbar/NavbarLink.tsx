@@ -15,7 +15,7 @@ const NavbarLink = ({ activeLink, isActive, link, setActiveLink }: Props) => {
     <li key={link.path}>
       <Link
         href={link.path}
-        className={`px-4 py-2 rounded-md text-sm lg:text-base relative ${
+        className={`px-4 py-2 rounded-md text-sm lg:text-base relative duration-150 ease-in ${
           isActive ? 'text-zinc-100' : 'text-zinc-400'
         }`}
         data-active={isActive}

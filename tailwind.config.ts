@@ -12,6 +12,8 @@ const config: Config = {
         bodyBackgroundColor: 'rgba(34, 40, 49, 1)',
         desktopNavBackgroundColor: 'rgba(33, 31, 35, 0.35)',
         desktopNavLinkBackgroundColor: 'rgba(96, 96, 96, 1)',
+        textColor: 'rgba(238, 238, 238, 1)',
+        highlightedTextColor: 'rgba(0, 173, 181, 1)',
       },
     },
   },
