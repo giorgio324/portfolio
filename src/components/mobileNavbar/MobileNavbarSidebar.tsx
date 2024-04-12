@@ -1,8 +1,10 @@
+'use client';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { navLinks } from '@/data/navLinks';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 
 type Props = {
   open: boolean;
@@ -11,7 +13,15 @@ type Props = {
 
 const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
   const currentPath = usePathname() || '/';
+  const [isMounted, setIsMounted] = useState(false);
 
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
   return (
     <>
       {createPortal(
