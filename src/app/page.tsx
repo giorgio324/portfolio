@@ -1,9 +1,9 @@
 import { Poppins } from 'next/font/google';
-import Image from 'next/image';
+/* import Image from 'next/image';
 import arrowImg from '../../public/arrow.svg';
 import sittingPerson from '../../public/sittingPerson.svg';
 import doodles from '../../public/doodles.svg';
-import shadow from '../../public/shadow.svg';
+import shadow from '../../public/shadow.svg'; */
 import Reveal from '@/components/Reveal';
 const popins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });
 const page = () => {
