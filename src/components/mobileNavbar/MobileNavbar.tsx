@@ -1,14 +1,24 @@
 'use client';
 import { usePathname } from 'next/navigation';
-import { IoIosMenu } from 'react-icons/io';
+import { useState } from 'react';
+import MobileNavbarButton from './MobileNavbarButton';
+import MobileNavbarSidebar from './MobileNavbarSidebar';
 const MobileNavbar = () => {
-  const currentPath = usePathname() || '/';
+  const [open, setOpen] = useState(true);
+  const openNavbar = () => {
+    setOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeNavbar = () => {
+    setOpen(false);
+    document.body.style.overflow = 'auto';
+  };
   return (
-    <div className='flex justify-end items-center p-4'>
-      <button className='border rounded-md bg-white p-1'>
-        <IoIosMenu className='text-[28px] text-black' />
-      </button>
-    </div>
+    <aside className='flex justify-end items-center p-4 md:hidden'>
+      <MobileNavbarButton openNavbar={openNavbar} />
+      <MobileNavbarSidebar closeNavbar={closeNavbar} open={open} />
+    </aside>
   );
 };
 export default MobileNavbar;

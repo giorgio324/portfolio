@@ -11,7 +11,7 @@ const NavbarLinks = () => {
   return (
     <>
       {navLinks.map((link) => (
-        <NavLink currentPath={currentPath} link={link} />
+        <NavLink key={link.label} currentPath={currentPath} link={link} />
       ))}
     </>
   );
