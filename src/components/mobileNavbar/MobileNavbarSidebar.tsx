@@ -56,7 +56,9 @@ const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
                       initial={{ opacity: 0, translateX: 50 }}
                       animate={{ opacity: 1, translateX: 0 }}
                       transition={{ duration: 0.3, delay: (index + 1) * 0.2 }}
-                      className='text-2xl'
+                      className={`text-2xl ${
+                        currentPath === link.path ? 'underline' : ''
+                      }`}
                     >
                       <Link href={link.path} onClick={closeNavbar}>
                         {link.label}
