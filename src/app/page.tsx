@@ -1,26 +1,27 @@
+import { Poppins } from 'next/font/google';
+/* import Image from 'next/image';
+import arrowImg from '../../public/arrow.svg';
+import sittingPerson from '../../public/sittingPerson.svg';
+import doodles from '../../public/doodles.svg';
+import shadow from '../../public/shadow.svg'; */
 import Reveal from '@/components/Reveal';
-import Visible from '@/components/Visible';
-
+const popins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });
 const page = () => {
   return (
     <>
-      <div className='min-h-screen p-4'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet beatae
-        cupiditate esse, accusamus ex voluptate nemo autem ipsum praesentium
-        quibusdam. Officia nesciunt possimus nemo commodi enim autem iure
-        molestiae non!
-      </div>
-      <div className='min-h-screen p-4'>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Amet beatae
-        cupiditate esse, accusamus ex voluptate nemo autem ipsum praesentium
-        quibusdam. Officia nesciunt possimus nemo commodi enim autem iure
-        molestiae non!
-      </div>
-      <Reveal width='fit-content'>
-        <h1>Hello</h1>
-        <p>i am giorgi</p>
-      </Reveal>
-      <Visible>test</Visible>
+      <main
+        className={`${popins.className} max-w-screen-xl mx-auto py-4 px-12 flex`}
+      >
+        <div className='relative text-xl'>
+          <Reveal width='fit-content'>
+            <h1>Giorgi Kochuashvili</h1>
+          </Reveal>
+          <Reveal width='fit-content'>
+            <h1>Front-End Developer</h1>
+          </Reveal>
+        </div>
+      </main>
+      <div id='home' className='min-h-screen bg-red-400'></div>
     </>
   );
 };

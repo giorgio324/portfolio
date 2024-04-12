@@ -13,9 +13,7 @@ const Reveal = ({ children, width }: Props) => {
   const mainControls = useAnimation();
   const slideControls = useAnimation();
   useEffect(() => {
-    console.log(isInView);
     if (isInView) {
-      console.log('i am visible');
       mainControls.start('visible');
       slideControls.start('visible');
     }
@@ -38,10 +36,10 @@ const Reveal = ({ children, width }: Props) => {
           start: { left: 0 },
           visible: { left: '100%' },
         }}
-        initial={'hidden'}
+        initial={'start'}
         animate={slideControls}
         transition={{ duration: 0.5, ease: 'easeIn' }}
-        className='absolute top-4 left-0 bottom-4 right-0 bg-green-500 z-20'
+        className='absolute top-0 left-0 bottom-0 right-0 bg-green-500 z-20'
       />
     </div>
   );
