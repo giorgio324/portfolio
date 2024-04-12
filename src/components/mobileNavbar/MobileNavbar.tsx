@@ -1,5 +1,4 @@
 'use client';
-import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 import MobileNavbarButton from './MobileNavbarButton';
 import MobileNavbarSidebar from './MobileNavbarSidebar';
