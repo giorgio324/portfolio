@@ -1,10 +1,10 @@
 'use client';
 import { createPortal } from 'react-dom';
 import { AnimatePresence, motion } from 'framer-motion';
-import { usePathname } from 'next/navigation';
-import { navLinks } from '@/data/navLinks';
-import Link from 'next/link';
+
 import { useEffect, useState } from 'react';
+import MobileNavbarSidebarSocial from './MobileNavbarSidebarSocial';
+import MobileNavbarSidebarLinks from './MobileNavbarSidebarLinks';
 
 type Props = {
   open: boolean;
@@ -12,7 +12,7 @@ type Props = {
 };
 
 const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
-  const currentPath = usePathname() || '/';
+  /* NOTE: is mounted check is needed because the docuemnt does not exist on server */
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -59,41 +59,8 @@ const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
                     className='h-[1px] bg-desktopNavLinkBackgroundColor w-full'
                   ></motion.div>
                 </motion.div>
-                <div className='flex-grow flex flex-col gap-4'>
-                  {navLinks.map((link, index) => (
-                    <motion.div
-                      key={link.label}
-                      initial={{ opacity: 0, translateX: 50 }}
-                      animate={{ opacity: 1, translateX: 0 }}
-                      transition={{ duration: 0.3, delay: (index + 1) * 0.2 }}
-                      className={`text-2xl ${
-                        currentPath === link.path ? 'underline' : ''
-                      }`}
-                    >
-                      <Link href={link.path} onClick={closeNavbar}>
-                        {link.label}
-                      </Link>
-                    </motion.div>
-                  ))}
-                </div>
-                <motion.div className='flex justify-between'>
-                  <motion.div
-                    initial={{ opacity: 0, translateX: 50 }}
-                    animate={{ opacity: 1, translateX: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                    className='text-sm mb-2 uppercase'
-                  >
-                    Github
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, translateX: 50 }}
-                    animate={{ opacity: 1, translateX: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                    className='text-sm mb-2 uppercase'
-                  >
-                    Facebook
-                  </motion.div>
-                </motion.div>
+                <MobileNavbarSidebarLinks closeNavbar={closeNavbar} />
+                <MobileNavbarSidebarSocial />
               </motion.div>
             </motion.div>
           )}
