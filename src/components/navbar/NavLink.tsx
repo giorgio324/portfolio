@@ -14,7 +14,7 @@ export const NavLink = ({ link, currentPath }: Props) => {
       key={link.label}
       className={`${
         currentPath === link.path ? '' : 'hover:text-white/60'
-      } relative rounded-full px-3 py-1.5 text-sm font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
+      } relative rounded-full px-3 py-1.5 font-medium text-white outline-sky-400 transition focus-visible:outline-2`}
       style={{
         WebkitTapHighlightColor: 'transparent',
       }}
