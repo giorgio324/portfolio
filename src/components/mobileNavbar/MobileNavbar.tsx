@@ -3,7 +3,7 @@ import { useState } from 'react';
 import MobileNavbarButton from './MobileNavbarButton';
 import MobileNavbarSidebar from './mobileNavbarSidebar/MobileNavbarSidebar';
 const MobileNavbar = () => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
   const openNavbar = () => {
     setOpen(true);
     document.body.style.overflow = 'hidden';
