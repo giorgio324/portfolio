@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import MobileNavbarSidebarSocial from './MobileNavbarSidebarSocial';
 import MobileNavbarSidebarLinks from './MobileNavbarSidebarLinks';
+import MobileNavbarHeader from './MobileNavbarHeader';
 
 type Props = {
   open: boolean;
@@ -28,6 +29,7 @@ const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
         <AnimatePresence mode='wait'>
           {open && (
             <motion.div className='inset-0 fixed flex justify-start items-center z-50'>
+              {/* backdrop */}
               <motion.div
                 className='inset-0 absolute bg-black z-10 cursor-pointer'
                 onClick={closeNavbar}
@@ -36,29 +38,15 @@ const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
                 animate={{ opacity: 0.5 }}
                 exit={{ opacity: 0 }}
               />
+              {/* content */}
               <motion.div
-                className='h-full w-3/4 bg-white z-20 p-8 text-black flex flex-col gap-4'
+                className='h-full w-[80%] bg-white z-20 p-8 text-black flex flex-col gap-4'
                 key='content'
                 initial={{ translateX: '-100%' }}
                 animate={{ translateX: '0%', transition: { duration: 0.3 } }}
                 exit={{ translateX: '-100%', transition: { duration: 0.3 } }}
               >
-                <motion.div className='mb-4'>
-                  <motion.div
-                    initial={{ opacity: 0, translateX: 50 }}
-                    animate={{ opacity: 1, translateX: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                    className='text-sm mb-2 uppercase'
-                  >
-                    Navigation
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, translateX: 50 }}
-                    animate={{ opacity: 1, translateX: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 }}
-                    className='h-[1px] bg-desktopNavLinkBackgroundColor w-full'
-                  ></motion.div>
-                </motion.div>
+                <MobileNavbarHeader />
                 <MobileNavbarSidebarLinks closeNavbar={closeNavbar} />
                 <MobileNavbarSidebarSocial />
               </motion.div>
