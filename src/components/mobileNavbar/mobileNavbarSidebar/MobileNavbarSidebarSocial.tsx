@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { socials } from '@/data/social';
 const MobileNavbarSidebarSocial = () => {
   return (
-    <motion.div className='flex gap-4'>
+    <motion.div className='flex gap-8'>
       {socials.map((social) => {
         return (
           <motion.a
@@ -15,7 +15,7 @@ const MobileNavbarSidebarSocial = () => {
             transition={{ duration: 0.3, delay: 0.2 }}
             className='text-sm mb-2 uppercase font-medium'
           >
-            {social.label}
+            {<social.icon className='text-2xl' />}
           </motion.a>
         );
       })}
