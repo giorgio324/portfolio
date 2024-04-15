@@ -40,13 +40,13 @@ const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
               />
               {/* content */}
               <motion.div
-                className='h-full w-[80%] bg-white z-20 p-8 text-black flex flex-col gap-4'
+                className='h-full w-[80%] bg-white z-20 p-6 text-black flex flex-col gap-4'
                 key='content'
                 initial={{ translateX: '-100%' }}
                 animate={{ translateX: '0%', transition: { duration: 0.3 } }}
                 exit={{ translateX: '-100%', transition: { duration: 0.3 } }}
               >
-                <MobileNavbarHeader />
+                <MobileNavbarHeader closeNavbar={closeNavbar} />
                 <MobileNavbarSidebarLinks closeNavbar={closeNavbar} />
                 <MobileNavbarSidebarSocial />
               </motion.div>
