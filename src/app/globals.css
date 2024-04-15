@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 .min-height-screen {
-  height: calc(100vh - 116px);
+  height: calc(100vh - 84px);
 }

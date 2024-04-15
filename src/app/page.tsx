@@ -8,7 +8,7 @@ const page = () => {
   return (
     <>
       <main
-        className={`${popins.className} max-w-screen-xl mx-auto p-4 md:flex md:px-12 lg:px-16 min-h-full`}
+        className={`${popins.className} max-w-screen-xl mx-auto p-4 md:flex md:px-12 lg:px-16 min-h-full min-height-screen`}
       >
         <Title />
         <HeroImages />
