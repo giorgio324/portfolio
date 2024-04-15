@@ -5,7 +5,7 @@ import RevealWithBackground from '../animation/RevealWithBackground';
 const Title = () => {
   return (
     <div className='relative flex flex-col justify-center items-center md:items-start w-full gap-2'>
-      <div className='text-xl md:text-3xl lg:text-5xl lg:leading-[60px] text-center relative'>
+      <div className='text-2xl md:text-3xl lg:text-5xl lg:leading-[60px] text-center relative'>
         <RevealWithBackground>
           <h1 className='font-bold'>Giorgi KOCHUASHVILI</h1>
         </RevealWithBackground>
