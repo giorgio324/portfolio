@@ -1,6 +1,4 @@
 import { Poppins } from 'next/font/google';
-import RevealWithBackground from '@/components/animation/RevealWithBackground';
-import Reveal from '@/components/animation/Reveal';
 import Title from '@/components/home/Title';
 import HeroImages from '@/components/home/HeroImages';
 const popins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });
