@@ -1,14 +1,12 @@
-import RevealWithBackground from '../animation/RevealWithBackground';
+import AboutImages from './AboutImages';
+import AboutTitle from './AboutTitle';
 
 const About = () => {
   return (
-    <section>
-      <div className='flex justify-center py-8'>
-        <RevealWithBackground>
-          <h1 className='font-bold text-2xl'>
-            About <span className='text-highlightedTextColor'>me</span>
-          </h1>
-        </RevealWithBackground>
+    <section className='max-w-screen-xl mx-auto p-4  md:px-12 lg:px-16 min-height-screen '>
+      <div className='flex flex-col md:flex-row justify-center items-center md:justify-between md:items-start '>
+        <AboutTitle />
+        <AboutImages />
       </div>
     </section>
   );
