@@ -5,9 +5,26 @@ import { useRef } from 'react';
 type Props = {
   children: React.ReactNode;
   width?: 'fit-content' | '100%';
+  direction?: 'down-to-up' | 'right-to-left';
 };
 
-const Reveal = ({ children, width = 'fit-content' }: Props) => {
+const Reveal = ({
+  children,
+  width = 'fit-content',
+  direction = 'down-to-up',
+}: Props) => {
+  const variants = {
+    initial: {
+      opacity: 0,
+      y: direction === 'down-to-up' ? 30 : 0,
+      x: direction === 'right-to-left' ? 30 : 0,
+    },
+    visible: {
+      opacity: 1,
+      y: direction === 'down-to-up' ? 0 : 0,
+      x: direction === 'right-to-left' ? 0 : 0,
+    },
+  };
   const scrollRef = useRef(null);
   return (
     <div
@@ -15,10 +32,7 @@ const Reveal = ({ children, width = 'fit-content' }: Props) => {
       style={{ position: 'relative', width, overflow: 'hidden' }}
     >
       <motion.div
-        variants={{
-          initial: { opacity: 0, y: 30 },
-          visible: { opacity: 1, y: 0 },
-        }}
+        variants={variants}
         initial='initial'
         whileInView={'visible'}
         viewport={{ once: true }}
