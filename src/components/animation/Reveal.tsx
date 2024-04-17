@@ -1,6 +1,5 @@
 'use client';
 import { motion } from 'framer-motion';
-import { useRef } from 'react';
 
 type Props = {
   children: React.ReactNode;
@@ -8,11 +7,7 @@ type Props = {
   direction?: 'down-to-up' | 'right-to-left';
 };
 
-const Reveal = ({
-  children,
-  width = 'fit-content',
-  direction = 'down-to-up',
-}: Props) => {
+const Reveal = ({ children, direction = 'down-to-up' }: Props) => {
   const variants = {
     initial: {
       opacity: 0,
@@ -25,22 +20,16 @@ const Reveal = ({
       x: direction === 'right-to-left' ? 0 : 0,
     },
   };
-  const scrollRef = useRef(null);
   return (
-    <div
-      ref={scrollRef}
-      style={{ position: 'relative', width, overflow: 'hidden' }}
+    <motion.div
+      variants={variants}
+      initial='initial'
+      whileInView={'visible'}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: 0.25 }}
     >
-      <motion.div
-        variants={variants}
-        initial='initial'
-        whileInView={'visible'}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.25 }}
-      >
-        {children}
-      </motion.div>
-    </div>
+      {children}
+    </motion.div>
   );
 };
 export default Reveal;

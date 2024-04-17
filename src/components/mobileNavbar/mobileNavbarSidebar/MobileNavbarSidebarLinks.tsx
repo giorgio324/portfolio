@@ -1,16 +1,31 @@
 'use client';
 import { navLinks } from '@/data/navLinks';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { useActiveLinkContext } from '@/context/ActiveLinkContext';
 
 type Props = {
   closeNavbar: () => void;
 };
 
 const MobileNavbarSidebarLinks = ({ closeNavbar }: Props) => {
-  const currentPath = usePathname() || '/';
-
+  const { setTimeOfLastClick, setCurrentPath, currentPath } =
+    useActiveLinkContext();
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    elementId: string
+  ) => {
+    e.preventDefault();
+    const section = document.getElementById(elementId);
+    section?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
+    setTimeOfLastClick(Date.now());
+    setCurrentPath(elementId);
+    closeNavbar();
+  };
   return (
     <div className='flex-grow flex flex-col gap-4'>
       {navLinks.map((link, index) => (
@@ -23,7 +38,10 @@ const MobileNavbarSidebarLinks = ({ closeNavbar }: Props) => {
             currentPath === link.path ? 'font-bold' : ''
           }`}
         >
-          <Link href={link.path} onClick={closeNavbar}>
+          <Link
+            href={`#${link.path}`}
+            onClick={(e) => handleClick(e, link.path)}
+          >
             {link.label}
           </Link>
           {currentPath === link.path && (

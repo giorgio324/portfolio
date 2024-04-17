@@ -8,8 +8,8 @@ type Props = {
 const MobileNavbarButton = ({ openNavbar }: Props) => {
   return (
     <Reveal direction='right-to-left'>
-      <button className='border rounded-md bg-white p-1'>
-        <IoIosMenu className='text-[28px] text-black' onClick={openNavbar} />
+      <button className='border rounded-md bg-white p-1' onClick={openNavbar}>
+        <IoIosMenu className='text-[28px] text-black' />
       </button>
     </Reveal>
   );

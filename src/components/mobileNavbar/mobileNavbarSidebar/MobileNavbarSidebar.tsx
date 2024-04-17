@@ -28,7 +28,7 @@ const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
       {createPortal(
         <AnimatePresence mode='wait'>
           {open && (
-            <motion.div className='inset-0 fixed flex justify-start items-center z-50'>
+            <motion.aside className='inset-0 fixed flex justify-start items-center z-50'>
               {/* backdrop */}
               <motion.div
                 className='inset-0 absolute bg-black z-10 cursor-pointer'
@@ -50,7 +50,7 @@ const MobileNavbarSidebar = ({ open, closeNavbar }: Props) => {
                 <MobileNavbarSidebarLinks closeNavbar={closeNavbar} />
                 <MobileNavbarSidebarSocial />
               </motion.div>
-            </motion.div>
+            </motion.aside>
           )}
         </AnimatePresence>,
         document.body
