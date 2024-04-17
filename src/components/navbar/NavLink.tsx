@@ -1,16 +1,31 @@
 'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
+import { SetStateAction } from 'react';
+import { useActiveLinkContext } from '@/context/ActiveLinkContext';
 
 type Props = {
   link: { path: string; label: string };
   currentPath: string;
+  setCurrentPath: React.Dispatch<SetStateAction<string>>;
 };
 
-export const NavLink = ({ link, currentPath }: Props) => {
+export const NavLink = ({ link, currentPath, setCurrentPath }: Props) => {
+  const { setTimeOfLastClick } = useActiveLinkContext();
+  const handleClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    elementId: string
+  ) => {
+    e.preventDefault();
+    console.log(link.path);
+    const section = document.getElementById(elementId);
+    section?.scrollIntoView({ behavior: 'smooth' });
+    setTimeOfLastClick(Date.now());
+    setCurrentPath(link.path);
+  };
   return (
     <Link
-      href={link.path}
+      href={`#${link.path}`}
       key={link.label}
       className={`${
         currentPath === link.path ? '' : 'hover:text-white/60'
@@ -18,6 +33,7 @@ export const NavLink = ({ link, currentPath }: Props) => {
       style={{
         WebkitTapHighlightColor: 'transparent',
       }}
+      onClick={(e) => handleClick(e, link.path)}
     >
       {currentPath === link.path && (
         <motion.span

@@ -1,17 +1,22 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { NavLink } from './NavLink';
 
 /* data import */
 import { navLinks } from '@/data/navLinks';
+import { useActiveLinkContext } from '@/context/ActiveLinkContext';
 
 const NavbarLinks = () => {
-  const currentPath = usePathname() || '/';
+  const { currentPath, setCurrentPath } = useActiveLinkContext();
   return (
     <>
       {navLinks.map((link) => (
-        <NavLink key={link.label} currentPath={currentPath} link={link} />
+        <NavLink
+          key={link.label}
+          currentPath={currentPath}
+          link={link}
+          setCurrentPath={setCurrentPath}
+        />
       ))}
     </>
   );
