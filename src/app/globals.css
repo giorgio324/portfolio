@@ -2,6 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.min-height-screen {
-  min-height: calc(100vh - 84px);
+.doodle-background {
+  background: url(../../public/doodlebackground.svg) fixed;
 }

@@ -15,7 +15,7 @@ const MobileNavbar = () => {
   };
 
   return (
-    <aside className='flex justify-end items-center p-4 md:hidden sticky top-0 z-50'>
+    <aside className='flex justify-end items-center p-4 md:hidden fixed top-2 right-2 z-50'>
       <MobileNavbarButton openNavbar={openNavbar} />
       <MobileNavbarSidebar closeNavbar={closeNavbar} open={open} />
     </aside>
