@@ -18,7 +18,7 @@ const Title = () => {
       <div className='text-sm lg:text-xl flex gap-4 mt-4'>
         <Reveal>
           <Link href={'/contact'}>
-            <button className='py-2 px-6 rounded-full bg-highlightedTextColor text-textColor  font-bold'>
+            <button className='py-2 px-6 rounded-full bg-buttonGreenBackgroundColor text-black  font-bold'>
               <span className='drop-shadow-xl'>Hire me</span>
             </button>
           </Link>

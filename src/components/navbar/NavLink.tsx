@@ -17,9 +17,17 @@ export const NavLink = ({ link, currentPath, setCurrentPath }: Props) => {
     elementId: string
   ) => {
     e.preventDefault();
-    console.log(link.path);
-    const section = document.getElementById(elementId);
-    section?.scrollIntoView({ behavior: 'smooth' });
+    const element = document.getElementById(elementId);
+    const elementPosition = element?.getBoundingClientRect().top;
+    const navbarHeight = 84;
+    if (elementPosition) {
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+    /* element?.scrollIntoView({ behavior: 'smooth' }); */
     setTimeOfLastClick(Date.now());
     setCurrentPath(link.path);
   };

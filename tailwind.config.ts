@@ -9,10 +9,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bodyBackgroundColor: 'rgba(34, 40, 49, 1)',
+        bodyBackgroundColor: 'rgba(10, 10, 10, 1)',
         desktopNavBackgroundColor: 'rgba(33, 31, 35, 0.75)',
         desktopNavLinkBackgroundColor: 'rgba(96, 96, 96, 1)',
         textColor: 'rgba(238, 238, 238, 1)',
+        buttonGreenBackgroundColor: 'rgba(211, 233, 122, 1)',
         highlightedTextColor: 'rgba(0, 173, 181, 1)',
         buttonBackgroundColor: 'rgba(57, 62, 70, 0.75)',
       },
