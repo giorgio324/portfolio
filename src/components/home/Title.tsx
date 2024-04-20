@@ -4,34 +4,36 @@ import RevealWithBackground from '../animation/RevealWithBackground';
 
 const Title = () => {
   return (
-    <div className='relative flex flex-col justify-center items-center md:items-start w-full gap-2'>
-      <div className='text-2xl md:text-3xl lg:text-5xl lg:leading-[60px] text-center relative'>
+    <section>
+      <div>
         <RevealWithBackground>
-          <h1 className='font-bold'>Giorgi KOCHUASHVILI</h1>
-        </RevealWithBackground>
-        <RevealWithBackground>
-          <h1 className='text-highlightedTextColor font-bold'>
-            Front-End Developer
+          <h1 className='text-5xl flex flex-col bebas-neue'>
+            hi, i am <span>giorgi kochuashvili.</span>
           </h1>
         </RevealWithBackground>
+        <RevealWithBackground>
+          <p className='text-paragraphTextColor manrope mt-3'>
+            A Sydney based front-end developer passionate about building
+            accessible and user friendly websites.
+          </p>
+        </RevealWithBackground>
       </div>
-      <div className='text-sm lg:text-xl flex gap-4 mt-4'>
+      <div className='mt-8 flex gap-4 manrope'>
+        {/* TODO: i need to make this button scroll to contact part and to change the active link with it */}
         <Reveal>
-          <Link href={'/contact'}>
-            <button className='py-2 px-6 rounded-full bg-buttonGreenBackgroundColor text-black  font-bold'>
-              <span className='drop-shadow-xl'>Hire me</span>
-            </button>
-          </Link>
+          <button className='py-3 px-4 rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold'>
+            <span className='drop-shadow-xl'>Contact Me</span>
+          </button>
         </Reveal>
         <Reveal>
           <a href='/Giorgi_Kochuashvili.pdf' download>
-            <button className='py-2 px-6 rounded-full bg-buttonBackgroundColor text-textColor  font-bold'>
-              <span className='drop-shadow-xl'>Download cv</span>
+            <button className='py-3 px-4 rounded-full bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor font-bold'>
+              <span className='drop-shadow-xl'>Download CV</span>
             </button>
           </a>
         </Reveal>
       </div>
-    </div>
+    </section>
   );
 };
 export default Title;

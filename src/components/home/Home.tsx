@@ -4,9 +4,7 @@ import Title from './Title';
 
 const Home = () => {
   return (
-    <main
-      className={`max-w-screen-xl mx-auto p-4 md:flex md:px-12 lg:px-16 min-h-screen mt-[76px]`}
-    >
+    <main className={`mt-[76px] px-4 py-10`}>
       <Title />
       <HeroImages />
     </main>

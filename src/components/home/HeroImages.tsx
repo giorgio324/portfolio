@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 const HeroImages = () => {
   return (
-    <div className='flex flex-col justify-center items-center py-8 '>
+    <section className='mt-16 px-4 flex flex-col justify-center items-center'>
       <div className='relative max-h-[240px] max-w-[280px] md:max-w-md'>
         <Reveal>
           <Image src={doodles} alt='doodles' placeholder='empty' />
@@ -27,7 +27,7 @@ const HeroImages = () => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 export default HeroImages;

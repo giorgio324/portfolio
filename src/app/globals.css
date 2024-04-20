@@ -5,3 +5,11 @@
 .doodle-background {
   background: url(../../public/doodlebackground.svg) fixed;
 }
+
+.manrope {
+  font-family: var(--font-manrope);
+}
+
+.bebas-neue {
+  font-family: var(--font-bebas-neue);
+}
