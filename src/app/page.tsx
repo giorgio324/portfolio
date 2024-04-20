@@ -1,3 +1,4 @@
+import Contact from '@/components/contact/Contact';
 import About from '@/components/home/About';
 import Home from '@/components/home/Home';
 import Projects from '@/components/projects/Projects';
@@ -14,6 +15,9 @@ const page = () => {
       </PageScrollDetectionWrapper>
       <PageScrollDetectionWrapper id='projects'>
         <Projects />
+      </PageScrollDetectionWrapper>
+      <PageScrollDetectionWrapper id='contact'>
+        <Contact />
       </PageScrollDetectionWrapper>
     </section>
   );

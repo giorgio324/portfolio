@@ -1,17 +1,16 @@
 'use client';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { SetStateAction } from 'react';
 import { useActiveLinkContext } from '@/context/ActiveLinkContext';
 
 type Props = {
   link: { path: string; label: string };
-  currentPath: string;
-  setCurrentPath: React.Dispatch<SetStateAction<string>>;
 };
 
-export const NavLink = ({ link, currentPath, setCurrentPath }: Props) => {
-  const { setTimeOfLastClick } = useActiveLinkContext();
+export const NavLink = ({ link }: Props) => {
+  const { setTimeOfLastClick, setCurrentPath, currentPath } =
+    useActiveLinkContext();
+
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     elementId: string
@@ -27,10 +26,10 @@ export const NavLink = ({ link, currentPath, setCurrentPath }: Props) => {
         behavior: 'smooth',
       });
     }
-    /* element?.scrollIntoView({ behavior: 'smooth' }); */
     setTimeOfLastClick(Date.now());
     setCurrentPath(link.path);
   };
+
   return (
     <Link
       href={`#${link.path}`}

@@ -1,8 +1,28 @@
-import Link from 'next/link';
+'use client';
 import Reveal from '../animation/Reveal';
 import RevealWithBackground from '../animation/RevealWithBackground';
+import { useActiveLinkContext } from '@/context/ActiveLinkContext';
 
 const Title = () => {
+  const { setTimeOfLastClick, setCurrentPath } = useActiveLinkContext();
+  const handleClick = (
+    e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
+    elementId: string
+  ) => {
+    e.preventDefault();
+    const element = document.getElementById(elementId);
+    const elementPosition = element?.getBoundingClientRect().top;
+    const navbarHeight = 84;
+    if (elementPosition) {
+      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+    setTimeOfLastClick(Date.now());
+    setCurrentPath(elementId);
+  };
   return (
     <section>
       <div>
@@ -19,15 +39,17 @@ const Title = () => {
         </RevealWithBackground>
       </div>
       <div className='mt-8 flex gap-4 manrope'>
-        {/* TODO: i need to make this button scroll to contact part and to change the active link with it */}
         <Reveal>
-          <button className='py-3 px-4 rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold'>
+          <button
+            className='py-3 px-4 text-sm rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold'
+            onClick={(e) => handleClick(e, 'contact')}
+          >
             <span className='drop-shadow-xl'>Contact Me</span>
           </button>
         </Reveal>
         <Reveal>
           <a href='/Giorgi_Kochuashvili.pdf' download>
-            <button className='py-3 px-4 rounded-full bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor font-bold'>
+            <button className='py-3 px-4 text-sm rounded-full bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor font-bold'>
               <span className='drop-shadow-xl'>Download CV</span>
             </button>
           </a>
