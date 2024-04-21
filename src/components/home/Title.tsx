@@ -25,16 +25,16 @@ const Title = () => {
   };
   return (
     <section className='flex-grow'>
-      <div>
+      <RevealWithBackground>
+        <h1 className='text-5xl lg:text-6xl flex flex-col bebas-neue'>
+          hi, i am <span className='md:min-w-max'>giorgi kochuashvili.</span>
+        </h1>
+      </RevealWithBackground>
+      <div className='mt-3'>
         <RevealWithBackground>
-          <h1 className='text-5xl lg:text-6xl flex flex-col bebas-neue'>
-            hi, i am <span className='md:min-w-max'>giorgi kochuashvili.</span>
-          </h1>
-        </RevealWithBackground>
-        <RevealWithBackground>
-          <p className='text-paragraphTextColor text-lg manrope mt-3'>
-            Front-End Developer and a student who is passionate about building
-            user friendly interfaces for websites
+          <p className='text-paragraphTextColor text-lg manrope'>
+            A Front-End Developer who is passionate about building user friendly
+            interfaces for the web
           </p>
         </RevealWithBackground>
       </div>
