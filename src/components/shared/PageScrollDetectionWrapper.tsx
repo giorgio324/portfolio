@@ -19,9 +19,9 @@ const PageScrollDetectionWrapper = ({ id, className, children }: Props) => {
     }
   }, [id, setCurrentPath, isInView, timeOfLastClick]);
   return (
-    <div className={className} id={id} ref={ref}>
+    <section className={className} id={id} ref={ref}>
       {children}
-    </div>
+    </section>
   );
 };
 export default PageScrollDetectionWrapper;
