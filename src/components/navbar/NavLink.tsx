@@ -45,7 +45,7 @@ export const NavLink = ({ link }: Props) => {
       {currentPath === link.path && (
         <motion.span
           layoutId='active-bubble'
-          className='absolute inset-0 z-10 bg-white mix-blend-difference'
+          className='absolute inset-0 z-10 bg-desktopNavLinkBackgroundColor mix-blend-difference'
           /* style={{ originY: 'top' }} this fixes the scroll bug */
           style={{ borderRadius: 9999, originY: 'top' }}
           transition={{ type: 'spring', bounce: 0.2, duration: 0.6 }}

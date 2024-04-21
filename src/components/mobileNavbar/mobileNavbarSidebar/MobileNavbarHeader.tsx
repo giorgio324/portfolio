@@ -13,7 +13,7 @@ const MobileNavbarHeader = ({ closeNavbar }: Props) => {
         initial={{ opacity: 0, translateX: 50 }}
         animate={{ opacity: 1, translateX: 0 }}
         transition={{ duration: 0.3, delay: 0.2 }}
-        className='text-sm uppercase flex justify-between items-end mb-2'
+        className='text-lg uppercase flex justify-between items-center mb-2 manrope font-semibold'
       >
         <p>Navigation</p>
         <button className='p-1 rounded-md' onClick={closeNavbar}>
@@ -24,7 +24,7 @@ const MobileNavbarHeader = ({ closeNavbar }: Props) => {
         initial={{ opacity: 0, translateX: 50 }}
         animate={{ opacity: 1, translateX: 0 }}
         transition={{ duration: 0.3, delay: 0.2 }}
-        className='h-[1px] bg-desktopNavLinkBackgroundColor w-full'
+        className='h-[2px] bg-desktopNavLinkBackgroundColor w-full'
       />
     </motion.div>
   );

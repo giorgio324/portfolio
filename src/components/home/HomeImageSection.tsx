@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const HomeImageSection = () => {
   return (
-    <section className='my-16 px-4'>
+    <section className='my-16 px-4 md:my-0 md:px-0'>
       <Reveal>
         <Image
           src={programming2}

@@ -11,7 +11,7 @@ const config: Config = {
       colors: {
         bodyBackgroundColor: 'rgba(10, 10, 10, 1)',
         desktopNavBackgroundColor: 'rgba(33, 31, 35, 0.75)',
-        desktopNavLinkBackgroundColor: 'rgba(96, 96, 96, 1)',
+        desktopNavLinkBackgroundColor: '#222222',
         buttonGreenBackgroundColor: 'rgba(211, 233, 122, 1)',
         buttonBlackBackgroundColor: '#222222',
         dividerBackgroundColor: '#484848',

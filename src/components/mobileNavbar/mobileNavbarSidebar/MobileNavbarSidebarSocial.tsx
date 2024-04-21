@@ -13,9 +13,8 @@ const MobileNavbarSidebarSocial = () => {
             initial={{ opacity: 0, translateX: 50 }}
             animate={{ opacity: 1, translateX: 0 }}
             transition={{ duration: 0.3, delay: 0.2 }}
-            className='text-sm mb-2 uppercase font-medium'
           >
-            {<social.icon className='text-2xl' />}
+            {<social.icon className='text-4xl' />}
           </motion.a>
         );
       })}

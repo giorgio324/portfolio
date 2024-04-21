@@ -24,24 +24,24 @@ const Title = () => {
     setCurrentPath(elementId);
   };
   return (
-    <section>
+    <section className='flex-grow'>
       <div>
         <RevealWithBackground>
-          <h1 className='text-5xl flex flex-col bebas-neue'>
-            hi, i am <span>giorgi kochuashvili.</span>
+          <h1 className='text-5xl lg:text-6xl flex flex-col bebas-neue'>
+            hi, i am <span className='md:min-w-max'>giorgi kochuashvili.</span>
           </h1>
         </RevealWithBackground>
         <RevealWithBackground>
-          <p className='text-paragraphTextColor manrope mt-3'>
-            A Sydney based front-end developer passionate about building
-            accessible and user friendly websites.
+          <p className='text-paragraphTextColor text-lg manrope mt-3'>
+            Front-End Developer and a student who is passionate about building
+            user friendly interfaces for websites
           </p>
         </RevealWithBackground>
       </div>
       <div className='mt-8 flex gap-4 manrope'>
         <Reveal>
           <button
-            className='py-3 px-4 text-sm rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold'
+            className='py-3 px-5 text-sm md:text-base lg:text-lg rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold'
             onClick={(e) => handleClick(e, 'contact')}
           >
             <span className='drop-shadow-xl'>Contact Me</span>
@@ -49,7 +49,7 @@ const Title = () => {
         </Reveal>
         <Reveal>
           <a href='/Giorgi_Kochuashvili.pdf' download>
-            <button className='py-3 px-4 text-sm rounded-full bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor font-bold'>
+            <button className='py-3 px-5 text-sm md:text-base lg:text-lg rounded-full bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor font-bold'>
               <span className='drop-shadow-xl'>Download CV</span>
             </button>
           </a>
