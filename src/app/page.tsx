@@ -1,24 +1,30 @@
-import About from '@/components/home/About';
+import Contact from '@/components/contact/Contact';
+import About from '@/components/about/About';
 import Home from '@/components/home/Home';
+import PageDivider from '@/components/shared/PageDivider';
 import Projects from '@/components/projects/Projects';
 import PageScrollDetectionWrapper from '@/components/shared/PageScrollDetectionWrapper';
-import { Poppins } from 'next/font/google';
-
-const popins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });
 
 const page = () => {
   return (
-    <section className={`${popins.className} `}>
+    <>
       <PageScrollDetectionWrapper id='home'>
         <Home />
+        <PageDivider />
       </PageScrollDetectionWrapper>
       <PageScrollDetectionWrapper id='about'>
         <About />
+        <PageDivider />
       </PageScrollDetectionWrapper>
       <PageScrollDetectionWrapper id='projects'>
         <Projects />
+        <PageDivider />
       </PageScrollDetectionWrapper>
-    </section>
+      <PageScrollDetectionWrapper id='contact'>
+        <Contact />
+        <PageDivider />
+      </PageScrollDetectionWrapper>
+    </>
   );
 };
 export default page;

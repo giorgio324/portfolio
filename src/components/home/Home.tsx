@@ -1,14 +1,16 @@
 'use client';
-import HeroImages from './HeroImages';
+import HomeImageSection from './HomeImageSection';
 import Title from './Title';
 
 const Home = () => {
   return (
     <main
-      className={`max-w-screen-xl mx-auto p-4 md:flex md:px-12 lg:px-16 min-h-screen mt-16 md:mt-0`}
+      className={
+        'max-w-screen-xl mx-auto mt-[76px] md:mt-[96px] px-4 md:px-10 lg:px-[108px] py-10 md:pt-[140px] md:pb-[160px] md:flex justify-center items-center gap-8'
+      }
     >
       <Title />
-      <HeroImages />
+      <HomeImageSection />
     </main>
   );
 };

@@ -34,8 +34,8 @@ const MobileNavbarSidebarLinks = ({ closeNavbar }: Props) => {
           initial={{ opacity: 0, translateX: 50 }}
           animate={{ opacity: 1, translateX: 0 }}
           transition={{ duration: 0.3, delay: (index + 1) * 0.2 }}
-          className={`text-2xl w-fit ${
-            currentPath === link.path ? 'font-bold' : ''
+          className={`text-2xl w-fit manrope ${
+            currentPath === link.path ? 'font-bold' : 'font-medium'
           }`}
         >
           <Link
