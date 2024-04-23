@@ -16,8 +16,8 @@ const Reveal = ({ children, direction = 'down-to-up' }: Props) => {
     },
     visible: {
       opacity: 1,
-      y: direction === 'down-to-up' ? 0 : 0,
-      x: direction === 'right-to-left' ? 0 : 0,
+      y: 0,
+      x: 0,
     },
   };
   return (
