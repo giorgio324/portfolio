@@ -1,7 +1,6 @@
-'use client';
 import RevealWithBackground from '../animation/RevealWithBackground';
 import { skills } from '@/data/skills';
-import { motion } from 'framer-motion';
+import StaggerReveal from '../animation/StaggerReveal';
 const AboutSkills = () => {
   return (
     <section>
@@ -18,20 +17,14 @@ const AboutSkills = () => {
           </p>
         </RevealWithBackground>
       </div>
-      {/* TODO: add skills here and map over them add stager animation so it looks cool and dont forget responsiveness */}
       <div className='flex gap-3 flex-wrap mt-6 mb-4'>
         {skills.map((skill, index) => {
           return (
-            <motion.div
-              key={skill}
-              initial={{ opacity: 0, translateX: -50 }}
-              animate={{ opacity: 1, translateX: 0 }}
-              transition={{ duration: 0.3, delay: (index + 1) * 0.1 }}
-            >
+            <StaggerReveal key={skill} index={index} delay={0.1}>
               <p className='text-sm uppercase manrope font-medium border border-borderColor px-4 py-2 rounded-full'>
                 {skill}
               </p>
-            </motion.div>
+            </StaggerReveal>
           );
         })}
       </div>
