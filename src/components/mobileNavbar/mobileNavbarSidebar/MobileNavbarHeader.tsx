@@ -24,7 +24,7 @@ const MobileNavbarHeader = ({ closeNavbar }: Props) => {
         initial={{ opacity: 0, translateX: 50 }}
         animate={{ opacity: 1, translateX: 0 }}
         transition={{ duration: 0.3, delay: 0.2 }}
-        className='h-[2px] bg-desktopNavLinkBackgroundColor w-full'
+        className='h-[2px] bg-black w-full'
       />
     </motion.div>
   );

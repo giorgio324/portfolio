@@ -1,4 +1,3 @@
-'use client';
 import HomeImageSection from './HomeImageSection';
 import Title from './Title';
 

@@ -1,8 +1,8 @@
 'use client';
 import { navLinks } from '@/data/navLinks';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
 import { useActiveLinkContext } from '@/context/ActiveLinkContext';
+import StaggerReveal from '@/components/animation/StaggerReveal';
 
 type Props = {
   closeNavbar: () => void;
@@ -11,6 +11,7 @@ type Props = {
 const MobileNavbarSidebarLinks = ({ closeNavbar }: Props) => {
   const { setTimeOfLastClick, setCurrentPath, currentPath } =
     useActiveLinkContext();
+  /* TODO: handleCLick needs to be changed */
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     elementId: string
@@ -29,30 +30,28 @@ const MobileNavbarSidebarLinks = ({ closeNavbar }: Props) => {
   return (
     <div className='flex-grow flex flex-col gap-4'>
       {navLinks.map((link, index) => (
-        <motion.div
+        <StaggerReveal
           key={link.label}
-          initial={{ opacity: 0, translateX: 50 }}
-          animate={{ opacity: 1, translateX: 0 }}
-          transition={{ duration: 0.3, delay: (index + 1) * 0.2 }}
-          className={`text-2xl w-fit manrope ${
-            currentPath === link.path ? 'font-bold' : 'font-medium'
-          }`}
+          delay={0.2}
+          index={index}
+          className='w-fit'
+          directionX='right-to-left'
         >
           <Link
             href={`#${link.path}`}
+            className={`text-2xl manrope ${
+              currentPath === link.path ? 'font-bold' : 'font-medium'
+            }`}
             onClick={(e) => handleClick(e, link.path)}
           >
             {link.label}
           </Link>
           {currentPath === link.path && (
-            <motion.div
-              initial={{ opacity: 0, translateX: 50 }}
-              animate={{ opacity: 1, translateX: 0 }}
-              transition={{ duration: 0.3, delay: (index + 1) * 0.2 }}
-              className='h-[2px] bg-black '
-            ></motion.div>
+            <StaggerReveal delay={0.2} index={index} directionX='right-to-left'>
+              <div className='h-[2px] bg-black'></div>
+            </StaggerReveal>
           )}
-        </motion.div>
+        </StaggerReveal>
       ))}
     </div>
   );
