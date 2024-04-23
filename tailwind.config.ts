@@ -17,6 +17,7 @@ const config: Config = {
         dividerBackgroundColor: '#484848',
         paragraphTextColor: '#C7C7C7',
         blackTextColor: '#0A0A0A',
+        borderColor: '#484848',
       },
     },
   },
