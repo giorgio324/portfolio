@@ -14,6 +14,7 @@ const config: Config = {
         desktopNavLinkBackgroundColor: 'rgba(96, 96, 96, 1)',
         buttonGreenBackgroundColor: 'rgba(211, 233, 122, 1)',
         buttonBlackBackgroundColor: '#222222',
+        cardBackgroundColor: '#222222',
         dividerBackgroundColor: '#484848',
         paragraphTextColor: '#C7C7C7',
         blackTextColor: '#0A0A0A',
