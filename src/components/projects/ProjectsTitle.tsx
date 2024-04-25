@@ -1,4 +1,3 @@
-import RevealWithBackground from '../animation/RevealWithBackground';
 import SectionDescription from '../shared/SectionDescription';
 import SectionTitle from '../shared/SectionTitle';
 
