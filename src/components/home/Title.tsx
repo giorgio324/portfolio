@@ -27,7 +27,7 @@ const Title = () => {
     <section className='flex-grow'>
       <RevealWithBackground>
         <h1 className='text-5xl lg:text-6xl flex flex-col bebas-neue'>
-          hi, i am <span className='md:min-w-max'>giorgi kochuashvili.</span>
+          hi, i am <span className='md:w-max'>giorgi kochuashvili.</span>
         </h1>
       </RevealWithBackground>
       <div className='mt-3'>

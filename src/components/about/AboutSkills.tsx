@@ -1,25 +1,19 @@
-import RevealWithBackground from '../animation/RevealWithBackground';
 import { skills } from '@/data/skills';
 import StaggerReveal from '../animation/StaggerReveal';
+import SectionTitle from '../shared/SectionTitle';
+import SectionDescription from '../shared/SectionDescription';
 const AboutSkills = () => {
   return (
     <section className='md:my-20 md:flex justify-between gap-10'>
       <div className='flex-grow'>
-        <RevealWithBackground>
-          <h1 className='text-4xl lg:text-5xl flex flex-col bebas-neue w-max'>
-            Tech Skills
-          </h1>
-        </RevealWithBackground>
+        <SectionTitle>Tech Skills</SectionTitle>
       </div>
       <div className='mt-3 md:mt-0 md:max-w-lg'>
-        <div>
-          <RevealWithBackground>
-            <p className='md:text-lg manrope text-paragraphTextColor'>
-              While I'm constantly seeking to expand my skillset, these are the
-              technologies where I possess expertise.
-            </p>
-          </RevealWithBackground>
-        </div>
+        <SectionDescription>
+          While I'm constantly seeking to expand my skillset, these are the
+          technologies where I possess expertise.
+        </SectionDescription>
+
         <div className='flex gap-3 flex-wrap mt-6 mb-4'>
           {skills.map((skill, index) => {
             return (

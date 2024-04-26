@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <main
       className={
-        'max-w-screen-xl mx-auto mt-[76px] md:mt-[96px] px-4 md:px-10 lg:px-[108px] py-10 md:pt-[140px] md:pb-[160px] md:flex justify-center items-center gap-8'
+        'max-w-screen-xl mx-auto mt-[76px] md:mt-[96px] px-4 md:px-10 lg:px-[108px] py-10 md:pt-[150px] md:pb-[170px] md:flex justify-center items-center gap-8'
       }
     >
       <Title />
