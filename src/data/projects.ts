@@ -1,7 +1,9 @@
 //@ts-ignore
-import thumbnail from '../../public/thumbnail.PNG';
+import projectImage1 from '../../public/projectImage1.PNG';
 //@ts-ignore
-import thumbnail2 from '../../public/thumbnail.JPG';
+import projectImage2 from '../../public/projectImage2.PNG';
+//@ts-ignore
+import projectImage3 from '../../public/projectImage3.PNG';
 export type Project = {
   id: number;
   title: string;
@@ -16,10 +18,10 @@ export type Project = {
 export const projectData: Project[] = [
   {
     id: 1,
-    image: thumbnail,
+    image: projectImage1,
     title: 'JobHunters - a job posting website',
     description:
-      'Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures.',
+      'Developed a full-stack web application using advanced technologies including ReactJS for building intuitive UI, TypeScript for enhanced code quality, Redux Toolkit for synchronus and asynchronus state management, and Firebase for user authentication, database and file storage. The application allows users to authenticate with email and password or with google account, create job postings and manage their created job posting. Special attention was given to responsive design and user experience, design was kept minimal for better user experience',
     year: 2024,
     role: 'Front-end-developer',
     githubLink: 'https://github.com/giorgio324/job-hunters-firebase',
@@ -27,13 +29,24 @@ export const projectData: Project[] = [
   },
   {
     id: 2,
-    image: thumbnail2,
-    title: 'Promotional landing page for our favorite show',
+    image: projectImage2,
+    title: 'Infinite Gallery',
     description:
-      'Teamed up with a designer to breathe life into a promotional webpage for our beloved show, Adventure Time. Delivered a fully responsive design with dynamic content capabilities, seamlessly integrating a newsletter feature to keep fans updated with the latest adventures.',
+      'Developed a front-end of a web application using technologies including ReactJS for building intuitive UI, TypeScript for enhanced code quality and TailwindCSS for styling components, Created a reusable custom hook for infinite scrolling, Implemented custom caching functionality stored in session storage, to optimize API GET requests, The application enables users to search for images, scroll infinitely, access search history, and view images in a modal window with image stats.',
     year: 2024,
     role: 'Front-end-developer',
+    githubLink: 'https://github.com/giorgio324/sweeft-gallery',
+    liveLink: 'https://unsplash-infinite-gallery.netlify.app/',
+  },
+  {
+    id: 3,
+    image: projectImage3,
+    title: 'Shoppy - a Ecommerce catalog website',
+    description:
+      'Developed a front-end of a web application using technologies including ReactJS for building intuitive UI, Redux Toolkit for state managment,firebase for user authentification, and TailwindCSS for styling components, Created a catalog of ecommerce website using FakestoreAPI. Users can scroll through catalog, view individual item page, add item to cart and view their cart.cart items are persisted in localstorage',
+    year: 2023,
+    role: 'Front-end-developer',
     githubLink: 'https://github.com/giorgio324/shoppy',
-    liveLink: '',
+    liveLink: 'https://shoppyecomerce.netlify.app/',
   },
 ];
