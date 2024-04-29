@@ -3,7 +3,6 @@ import { Bebas_Neue, Manrope } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/navbar/Navbar';
 import MobileNavbar from '@/components/mobileNavbar/MobileNavbar';
-import Footer from '@/components/footer/Footer';
 import { ActiveLinkContextProvider } from '@/context/ActiveLinkContext';
 
 const manrope = Manrope({
@@ -35,7 +34,6 @@ export default function RootLayout({
           <MobileNavbar />
           {children}
         </ActiveLinkContextProvider>
-        <Footer />
       </body>
     </html>
   );
