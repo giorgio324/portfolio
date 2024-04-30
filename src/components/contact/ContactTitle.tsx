@@ -16,7 +16,7 @@ const ContactTitle = () => {
               <p>Message me at</p>
               <a
                 href='mailto:giorgikochuashvili2002@gmail.com'
-                className='text-buttonGreenBackgroundColor manrope font-semibold border-b-2 border-b-buttonGreenBackgroundColor flex items-center text-sm md:text-base pb-1'
+                className='text-buttonGreenBackgroundColor manrope font-semibold border-b-2 border-b-buttonGreenBackgroundColor flex items-center text-sm md:text-base pb-1 hover:text-white hover:border-b-white transition-colors duration-300'
               >
                 giorgikochuashvili2002@gmail.com
               </a>
@@ -30,7 +30,7 @@ const ContactTitle = () => {
           return (
             <Reveal key={social.label}>
               <Link href={social.path} target='_blank'>
-                <social.icon className='text-4xl text-buttonGreenBackgroundColor' />
+                <social.icon className='text-4xl text-buttonGreenBackgroundColor hover:text-white hover:border-b-white transition-colors duration-300' />
               </Link>
             </Reveal>
           );

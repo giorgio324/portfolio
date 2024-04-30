@@ -12,7 +12,7 @@ const ProjectCardLinkButton = ({ children, href }: Props) => {
       <Link
         target='_blank'
         href={href}
-        className='uppercase text-buttonGreenBackgroundColor manrope font-semibold border-b-2 border-b-buttonGreenBackgroundColor flex justify-center items-center gap-2 text-sm md:text-base py-1'
+        className='uppercase text-buttonGreenBackgroundColor manrope font-semibold border-b-2 border-b-buttonGreenBackgroundColor flex justify-center items-center gap-2 text-sm md:text-base py-1 hover:text-white hover:border-b-white transition-colors duration-300'
       >
         {children}
       </Link>
