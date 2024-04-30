@@ -15,6 +15,7 @@ type FormValues = {
 
 const ContactForm = () => {
   const [loading, setLoading] = useState(false);
+  const [recived, setRecived] = useState(false);
   const initialValues: FormValues = {
     name: '',
     email: '',
@@ -41,6 +42,9 @@ const ContactForm = () => {
       .then((resp) => {
         formikHelpers.resetForm();
         setLoading(false);
+        if (resp.status === 200) {
+          setRecived(true);
+        }
       })
       .catch((err) => {
         console.log(err);
@@ -54,7 +58,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={contactFormValidationSchema}
     >
-      <Form className='mt-16 flex flex-col gap-6 items-start manrope'>
+      <Form className='mt-16 lg:mt-0 flex flex-col gap-6 items-start manrope lg:flex-grow lg:max-w-xl'>
         <FormikField label={'Name'} name={'name'} placeholder={'Name'} />
         <FormikField
           label={'Email'}
@@ -80,10 +84,13 @@ const ContactForm = () => {
             {loading ? <LoadingSpinner /> : 'Submit'}
           </button>
         </Reveal>
+        {recived && (
+          <p className='text-green-500 mt-2 lg:text-lg'>
+            {'Message sent successfully'}
+          </p>
+        )}
       </Form>
     </Formik>
   );
 };
 export default ContactForm;
-/* 44 */
-/* 117 */
