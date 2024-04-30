@@ -1,11 +1,9 @@
 import { socials } from '@/data/social';
-import SectionDescription from '../shared/SectionDescription';
 import SectionTitle from '../shared/SectionTitle';
 import Reveal from '../animation/Reveal';
 import Link from 'next/link';
 import RevealWithBackground from '../animation/RevealWithBackground';
 const ContactTitle = () => {
-  /* TODO: fix this shit later */
   return (
     <div>
       <SectionTitle>Let’s connect</SectionTitle>

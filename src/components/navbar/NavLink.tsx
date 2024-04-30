@@ -16,16 +16,12 @@ export const NavLink = ({ link }: Props) => {
     elementId: string
   ) => {
     e.preventDefault();
-    const element = document.getElementById(elementId);
-    const elementPosition = element?.getBoundingClientRect().top;
-    const navbarHeight = 84;
-    if (elementPosition) {
-      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
+    const section = document.getElementById(elementId);
+    section?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
     setTimeOfLastClick(Date.now());
     setCurrentPath(link.path);
   };
