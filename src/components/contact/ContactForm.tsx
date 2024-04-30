@@ -54,7 +54,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       validationSchema={contactFormValidationSchema}
     >
-      <Form className='my-16 flex flex-col gap-6 items-start manrope'>
+      <Form className='mt-16 flex flex-col gap-6 items-start manrope'>
         <FormikField label={'Name'} name={'name'} placeholder={'Name'} />
         <FormikField
           label={'Email'}
@@ -70,7 +70,7 @@ const ContactForm = () => {
         />
         <Reveal>
           <button
-            className={`w-[117px] h-[44px] md:w-[140px] md:h-[50px] text-sm md:text-base lg:text-lg rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold uppercase ${
+            className={`w-[117px] h-[44px] md:w-[140px] md:h-[50px] text-sm md:text-base lg:text-lg rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold uppercase md:mt-4 ${
               loading &&
               'bg-cardBackgroundColor cursor-not-allowed flex justify-center items-center'
             }`}
