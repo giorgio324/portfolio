@@ -6,6 +6,7 @@ import emailjs from '@emailjs/browser';
 import { useState } from 'react';
 import Reveal from '../animation/Reveal';
 import LoadingSpinner from '../shared/LoadingSpinner';
+import { AnimatePresence, motion } from 'framer-motion';
 
 type FormValues = {
   name: string;
@@ -44,6 +45,9 @@ const ContactForm = () => {
         setLoading(false);
         if (resp.status === 200) {
           setRecived(true);
+          setTimeout(() => {
+            setRecived(false);
+          }, 2000);
         }
       })
       .catch((err) => {
@@ -84,11 +88,19 @@ const ContactForm = () => {
             {loading ? <LoadingSpinner /> : 'Submit'}
           </button>
         </Reveal>
-        {recived && (
-          <p className='text-green-500 mt-2 lg:text-lg'>
-            {'Message sent successfully'}
-          </p>
-        )}
+        <AnimatePresence>
+          {recived && (
+            <motion.p
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.3, delay: 0.15 }}
+              exit={{ opacity: 0, y: 30 }}
+              className='text-green-500 mt-2 lg:text-lg font-semibold'
+            >
+              {'Message sent successfully'}
+            </motion.p>
+          )}
+        </AnimatePresence>
       </Form>
     </Formik>
   );
