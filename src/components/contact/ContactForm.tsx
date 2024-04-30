@@ -1,7 +1,11 @@
 'use client';
-import { Field, Form, Formik, FormikHelpers, FormikProps } from 'formik';
+import { Form, Formik, FormikHelpers } from 'formik';
 import FormikField from '../shared/FormikField';
 import { contactFormValidationSchema } from '@/schema/contactFormValidationSchema';
+import emailjs from '@emailjs/browser';
+import { useState } from 'react';
+import Reveal from '../animation/Reveal';
+import LoadingSpinner from '../shared/LoadingSpinner';
 
 type FormValues = {
   name: string;
@@ -10,17 +14,38 @@ type FormValues = {
 };
 
 const ContactForm = () => {
+  const [loading, setLoading] = useState(false);
   const initialValues: FormValues = {
     name: '',
     email: '',
     message: '',
   };
 
-  const handleSubmit = (
+  const handleSubmit = async (
     values: FormValues,
     formikHelpers: FormikHelpers<FormValues>
   ) => {
-    console.log(values);
+    const serviceId = 'service_gu2k4e9';
+    const templateId = 'template_8lxuy8j';
+    const publicKey = 'XVyc25m5VA-gYYba8';
+    /* templateParam keys represent template values in emailjs template */
+    const templateParams = {
+      from_name: values.name,
+      from_email: values.email,
+      to_name: 'Giorgi Kochuashvili',
+      message: values.message,
+    };
+    setLoading(true);
+    emailjs
+      .send(serviceId, templateId, templateParams, publicKey)
+      .then((resp) => {
+        formikHelpers.resetForm();
+        setLoading(false);
+      })
+      .catch((err) => {
+        console.log(err);
+        setLoading(false);
+      });
   };
 
   return (
@@ -43,14 +68,22 @@ const ContactForm = () => {
           placeholder={'Message'}
           component='textarea'
         />
-        <button
-          className='py-3 px-8 text-sm md:text-base lg:text-lg rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold uppercase'
-          type='submit'
-        >
-          Submit
-        </button>
+        <Reveal>
+          <button
+            className={`w-[117px] h-[44px] md:w-[140px] md:h-[50px] text-sm md:text-base lg:text-lg rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold uppercase ${
+              loading &&
+              'bg-cardBackgroundColor cursor-not-allowed flex justify-center items-center'
+            }`}
+            type='submit'
+            disabled={loading}
+          >
+            {loading ? <LoadingSpinner /> : 'Submit'}
+          </button>
+        </Reveal>
       </Form>
     </Formik>
   );
 };
 export default ContactForm;
+/* 44 */
+/* 117 */

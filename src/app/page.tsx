@@ -22,7 +22,6 @@ const page = () => {
       </PageScrollDetectionWrapper>
       <PageScrollDetectionWrapper id='contact'>
         <Contact />
-        <PageDivider />
       </PageScrollDetectionWrapper>
     </>
   );
