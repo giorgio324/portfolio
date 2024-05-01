@@ -22,12 +22,12 @@ const Button = ({
       disabled={loading}
       className={`py-3 px-4 md:px-6 capitalize text-sm md:text-base lg:text-lg rounded-full font-bold  transition-colors duration-300 ${
         inverted
-          ? 'bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor hover:text-black hover:bg-gray-700'
+          ? 'bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor hover:text-black hover:bg-gray-400'
           : 'bg-buttonGreenBackgroundColor text-blackTextColor hover:text-white hover:bg-green-500'
       }
       ${
         loading &&
-        'bg-cardBackgroundColor cursor-not-allowed flex justify-center items-center'
+        'bg-cardBackgroundColor cursor-not-allowed flex justify-center items-center hover:text-white hover:bg-cardBackgroundColor'
       }`}
       onClick={handleClick ? (e) => handleClick(e, 'contact') : undefined}
     >
