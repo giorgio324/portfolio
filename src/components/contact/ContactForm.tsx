@@ -7,6 +7,7 @@ import { useState } from 'react';
 import Reveal from '../animation/Reveal';
 import LoadingSpinner from '../shared/LoadingSpinner';
 import { AnimatePresence, motion } from 'framer-motion';
+import Button from '../shared/Button';
 
 type FormValues = {
   name: string;
@@ -77,16 +78,13 @@ const ContactForm = () => {
           component='textarea'
         />
         <Reveal>
-          <button
-            className={`w-[117px] h-[44px] md:w-[140px] md:h-[50px] text-sm md:text-base lg:text-lg rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold uppercase md:mt-4 ${
-              loading &&
-              'bg-cardBackgroundColor cursor-not-allowed flex justify-center items-center'
-            }`}
-            type='submit'
-            disabled={loading}
-          >
-            {loading ? <LoadingSpinner /> : 'Submit'}
-          </button>
+          <Button type='submit' loading={loading}>
+            {loading ? (
+              <LoadingSpinner />
+            ) : (
+              <span className='drop-shadow-xl'>Submit</span>
+            )}
+          </Button>
         </Reveal>
         <AnimatePresence>
           {recived && (

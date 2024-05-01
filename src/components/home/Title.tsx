@@ -2,6 +2,7 @@
 import Reveal from '../animation/Reveal';
 import RevealWithBackground from '../animation/RevealWithBackground';
 import { useActiveLinkContext } from '@/context/ActiveLinkContext';
+import Button from '../shared/Button';
 
 const Title = () => {
   const { setTimeOfLastClick, setCurrentPath } = useActiveLinkContext();
@@ -10,16 +11,12 @@ const Title = () => {
     elementId: string
   ) => {
     e.preventDefault();
-    const element = document.getElementById(elementId);
-    const elementPosition = element?.getBoundingClientRect().top;
-    const navbarHeight = 84;
-    if (elementPosition) {
-      const offsetPosition = elementPosition + window.scrollY - navbarHeight;
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: 'smooth',
-      });
-    }
+    const section = document.getElementById(elementId);
+    section?.scrollIntoView({
+      behavior: 'smooth',
+      block: 'start',
+      inline: 'nearest',
+    });
     setTimeOfLastClick(Date.now());
     setCurrentPath(elementId);
   };
@@ -40,18 +37,15 @@ const Title = () => {
       </div>
       <div className='mt-8 flex gap-4 manrope'>
         <Reveal>
-          <button
-            className='py-3 px-5 text-sm md:text-base lg:text-lg rounded-full bg-buttonGreenBackgroundColor text-blackTextColor font-bold'
-            onClick={(e) => handleClick(e, 'contact')}
-          >
+          <Button handleClick={handleClick}>
             <span className='drop-shadow-xl'>Contact Me</span>
-          </button>
+          </Button>
         </Reveal>
         <Reveal>
           <a href='/Giorgi_Kochuashvili.pdf' download>
-            <button className='py-3 px-5 text-sm md:text-base lg:text-lg rounded-full bg-buttonBlackBackgroundColor text-buttonGreenBackgroundColor font-bold'>
+            <Button inverted>
               <span className='drop-shadow-xl'>Download CV</span>
-            </button>
+            </Button>
           </a>
         </Reveal>
       </div>
