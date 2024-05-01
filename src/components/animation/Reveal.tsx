@@ -3,7 +3,6 @@ import { motion } from 'framer-motion';
 
 type Props = {
   children: React.ReactNode;
-  width?: 'fit-content' | '100%';
   direction?: 'down-to-up' | 'right-to-left';
 };
 

@@ -11,7 +11,6 @@ type Props = {
 const MobileNavbarSidebarLinks = ({ closeNavbar }: Props) => {
   const { setTimeOfLastClick, setCurrentPath, currentPath } =
     useActiveLinkContext();
-  /* TODO: handleCLick needs to be changed */
   const handleClick = (
     e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
     elementId: string

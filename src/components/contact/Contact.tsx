@@ -1,13 +1,11 @@
-import SectionDescription from '../shared/SectionDescription';
-import SectionTitle from '../shared/SectionTitle';
+import ContactForm from './ContactForm';
+import ContactTitle from './ContactTitle';
 
 const Contact = () => {
   return (
-    <div>
-      <SectionTitle>Let`s connect</SectionTitle>
-      <SectionDescription>
-        Say hello at robertgarcia@gmail.com For more info, here’s my resume
-      </SectionDescription>
+    <div className='max-w-screen-xl mx-auto px-4 md:px-10 lg:px-28 py-16 md:py-32 lg:flex lg:justify-between gap-6'>
+      <ContactTitle />
+      <ContactForm />
     </div>
   );
 };

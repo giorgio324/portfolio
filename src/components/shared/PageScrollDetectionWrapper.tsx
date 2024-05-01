@@ -11,7 +11,7 @@ type Props = {
 
 const PageScrollDetectionWrapper = ({ id, className, children }: Props) => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const isInView = useInView(ref, { amount: 0.5 });
+  const isInView = useInView(ref, { amount: 0.2 });
   const { setCurrentPath, timeOfLastClick } = useActiveLinkContext();
   useEffect(() => {
     if (isInView && Date.now() - timeOfLastClick > 1000) {
