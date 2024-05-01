@@ -10,6 +10,7 @@ const AboutImages = () => {
           src={proggraming}
           alt='illustration of person looking at website'
           className='my-16 md:hidden'
+          priority={false}
         />
       </Reveal>
     </section>

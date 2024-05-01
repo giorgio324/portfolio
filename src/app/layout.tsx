@@ -17,8 +17,8 @@ const bebasNeue = Bebas_Neue({
 });
 
 export const metadata: Metadata = {
-  title: 'Giorgi KOCHUASHVILI',
-  description: "Giorgi KOCHUASHVILI's portfolio",
+  title: 'Giorgi Kochuashvili',
+  description: "Giorgi Kochuashvili's portfolio",
 };
 
 export default function RootLayout({

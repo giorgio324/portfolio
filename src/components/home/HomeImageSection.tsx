@@ -9,6 +9,7 @@ const HomeImageSection = () => {
         <Image
           src={programming2}
           alt='illustration of person writing code on computer'
+          priority={true}
         />
       </Reveal>
     </section>
