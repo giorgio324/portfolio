@@ -4,9 +4,10 @@ export const skills = [
   'JavaScript',
   'TypeScript',
   'ReactJS',
-  'Redux Toolkit',
+  'Redux',
+  'React Query',
   'Formik',
-  'Redux Thunk API',
+  'React Hook Form',
   'Yup',
   'Framer Motion',
   'Firebase',
@@ -15,5 +16,4 @@ export const skills = [
   'MUI',
   'Git',
   'GitHub',
-  'VS Code',
 ];
