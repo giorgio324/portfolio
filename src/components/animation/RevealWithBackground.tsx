@@ -17,7 +17,7 @@ const RevealWithBackground = ({ children, width = 'fit-content' }: Props) => {
       textControls.start('visible');
       slideControls.start('visible');
     }
-  }, [isInView]);
+  }, [isInView, slideControls, textControls]);
   return (
     <div ref={ref} style={{ position: 'relative', width, overflow: 'hidden' }}>
       <motion.div

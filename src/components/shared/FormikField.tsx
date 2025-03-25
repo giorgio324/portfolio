@@ -36,9 +36,11 @@ const FormikField = ({
           />
         </label>
       </Reveal>
-      {meta.touched && meta.error ? (
-        <p className='text-red-500 mt-2 '>{`*${meta.error}`}</p>
-      ) : null}
+      <div className='mt-2 h-[1.5rem] lg:h-[1.75rem]'>
+        {meta.touched && meta.error ? (
+          <p className='text-red-500'>{`*${meta.error}`}</p>
+        ) : null}
+      </div>
     </div>
   );
 };

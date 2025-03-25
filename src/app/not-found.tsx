@@ -6,7 +6,7 @@ const NotFound = () => {
   const router = useRouter();
   useEffect(() => {
     router.replace('/');
-  }, []);
+  }, [router]);
   return null;
 };
 export default NotFound;
