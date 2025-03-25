@@ -10,15 +10,17 @@ const AboutTitle = () => {
       <div className='md:max-w-lg'>
         <div className='mt-4 md:mt-0'>
           <SectionSubTitle>
-            👋 I am a Student who is passionate about web development
+            👋 I am currently a Student who is passionate about web development
           </SectionSubTitle>
         </div>
         <div className='mt-3'>
           <SectionDescription>
-            I discovered my passion for web development when I started
-            university, where I primarily delve into front-end development using
-            React and Next.js. However, I'm also eager to explore technologies
-            outside of front-end.
+            I discovered my passion for web development when I began learning
+            front-end development with React. However, as I delved into backend
+            development with Laravel, I found myself truly captivated by it.
+            Now, while I enjoy working with both, my enthusiasm for backend
+            development has grown significantly. I&apos;m also eager to explore
+            technologies beyond JavaScript and PHP to expand my knowladge.
           </SectionDescription>
         </div>
       </div>

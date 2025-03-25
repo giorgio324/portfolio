@@ -10,8 +10,8 @@ const AboutSkills = () => {
       </div>
       <div className='mt-3 md:mt-0 md:max-w-lg'>
         <SectionDescription>
-          While I'm constantly seeking to expand my skillset, these are the
-          technologies where I possess expertise.
+          Here are some of my most valued tech skills that I have acquired
+          throughout my journey.
         </SectionDescription>
 
         <div className='flex gap-3 flex-wrap mt-6 mb-4'>

@@ -30,8 +30,8 @@ const Title = () => {
       <div className='mt-3'>
         <RevealWithBackground>
           <p className='text-paragraphTextColor text-lg manrope'>
-            A Front-End Developer who is passionate about building user friendly
-            interfaces for the web
+            A Full-Stack Developer 🚀 Building a Better Web, One Code Block at a
+            Time
           </p>
         </RevealWithBackground>
       </div>
