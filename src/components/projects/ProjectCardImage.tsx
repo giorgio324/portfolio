@@ -12,11 +12,10 @@ const ProjectCardImage = ({ image }: Props) => {
         <Image
           src={image}
           alt='image of Project'
+          width={536}
+          height={318}
           sizes='100vw'
-          style={{
-            width: '100%',
-            height: 'auto',
-          }}
+          layout='responsive'
           className='rounded-lg'
         />
       </Reveal>

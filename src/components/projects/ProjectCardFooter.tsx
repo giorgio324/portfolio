@@ -7,7 +7,7 @@ import ProjectCardLinkButton from './ProjectCardLinkButton';
 type Props = {
   year: number;
   role: string;
-  liveLink: string;
+  liveLink?: string;
   githubLink: string;
 };
 
@@ -41,10 +41,12 @@ const ProjectCardFooter = ({ year, role, githubLink, liveLink }: Props) => {
         </div>
       </div>
       <div className='flex gap-4 mt-8'>
-        <ProjectCardLinkButton href={liveLink}>
-          Live Demo
-          <GoArrowUpRight className='text-xl md:text-2xl' />
-        </ProjectCardLinkButton>
+        {liveLink && (
+          <ProjectCardLinkButton href={liveLink}>
+            Live Demo
+            <GoArrowUpRight className='text-xl md:text-2xl' />
+          </ProjectCardLinkButton>
+        )}
         <ProjectCardLinkButton href={githubLink}>
           View Code
           <FaGithub className='text-xl md:text-2xl' />
