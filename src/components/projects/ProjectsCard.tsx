@@ -21,6 +21,7 @@ const ProjectsCard = ({ project }: Props) => {
           role={project.role}
           githubLink={project.githubLink}
           liveLink={project.liveLink}
+          extraLink={project.extraLink}
         />
       </div>
     </div>

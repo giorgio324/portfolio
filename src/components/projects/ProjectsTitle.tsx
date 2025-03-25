@@ -7,8 +7,8 @@ const ProjectsTitle = () => {
       <SectionTitle>featured projects</SectionTitle>
       <div className='mt-3'>
         <SectionDescription>
-          Here are some of the selected projects that showcase my passion for
-          front-end development.
+          Here are some of my projects that demonstrate my passion and skills in
+          web development.
         </SectionDescription>
       </div>
     </>

@@ -9,9 +9,16 @@ type Props = {
   role: string;
   liveLink?: string;
   githubLink: string;
+  extraLink?: string;
 };
 
-const ProjectCardFooter = ({ year, role, githubLink, liveLink }: Props) => {
+const ProjectCardFooter = ({
+  year,
+  role,
+  githubLink,
+  liveLink,
+  extraLink,
+}: Props) => {
   return (
     <>
       <div className='mt-8 lg:mt-4 flex flex-col'>
@@ -48,9 +55,15 @@ const ProjectCardFooter = ({ year, role, githubLink, liveLink }: Props) => {
           </ProjectCardLinkButton>
         )}
         <ProjectCardLinkButton href={githubLink}>
-          View Code
+          {extraLink ? 'Frontend Code' : 'View Code'}
           <FaGithub className='text-xl md:text-2xl' />
         </ProjectCardLinkButton>
+        {extraLink && (
+          <ProjectCardLinkButton href={extraLink}>
+            API Code
+            <FaGithub className='text-xl md:text-2xl' />
+          </ProjectCardLinkButton>
+        )}
       </div>
     </>
   );
