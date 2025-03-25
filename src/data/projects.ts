@@ -21,10 +21,10 @@ export const projectData: Project[] = [
     year: 2025,
     role: 'Full-Stack-developer',
     githubLink:
-      'https://github.com/RedberryInternship/giorgi-kochuashvili-quizwiz-front',
-    liveLink: 'https://quiz-wiz.giorgi-kochuashvili.redberryinternship.ge/',
+      'https://github.com/giorgio324/giorgi-kochuashvili-redberry-quizwiz-front',
     extraLink:
-      'https://github.com/RedberryInternship/giorgi-kochuashvili-quizwiz-back',
+      'https://github.com/giorgio324/giorgi-kochuashvili-redberry-quizwiz-back',
+    liveLink: 'https://quiz-wiz.giorgi-kochuashvili.redberryinternship.ge/',
   },
   {
     id: 2,
@@ -35,7 +35,7 @@ export const projectData: Project[] = [
     year: 2024,
     role: 'Full-Stack-developer',
     githubLink:
-      'https://github.com/RedberryInternship/giorgi-kochuashvili-todo',
+      'https://github.com/giorgio324/giorgi-kochuashvili-redberry-todo',
   },
   {
     id: 3,
