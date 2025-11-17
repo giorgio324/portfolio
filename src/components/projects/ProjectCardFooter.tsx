@@ -8,7 +8,7 @@ type Props = {
   year: number;
   role: string;
   liveLink?: string;
-  githubLink: string;
+  githubLink?: string;
   extraLink?: string;
 };
 
@@ -54,10 +54,12 @@ const ProjectCardFooter = ({
             <GoArrowUpRight className='text-xl md:text-2xl' />
           </ProjectCardLinkButton>
         )}
-        <ProjectCardLinkButton href={githubLink}>
-          {extraLink ? 'Frontend Code' : 'View Code'}
-          <FaGithub className='text-xl md:text-2xl' />
-        </ProjectCardLinkButton>
+        {githubLink && (
+          <ProjectCardLinkButton href={githubLink}>
+            {extraLink ? 'Frontend Code' : 'View Code'}
+            <FaGithub className='text-xl md:text-2xl' />
+          </ProjectCardLinkButton>
+        )}
         {extraLink && (
           <ProjectCardLinkButton href={extraLink}>
             API Code

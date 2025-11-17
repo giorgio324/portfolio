@@ -6,11 +6,21 @@ export type Project = {
   year: number;
   role: string;
   liveLink?: string;
-  githubLink: string;
+  githubLink?: string;
   extraLink?: string;
 };
 
 export const projectData: Project[] = [
+  {
+    id: 11,
+    image: '/project-green-card.png',
+    title: 'Greencard.ge',
+    description:
+      'Full-stack application designed to help users with the DV-Lottery process. It features simplified forms, authentication, and status notifications. Developed with Next.js and a Laravel API. Project is featured in 3 languages Georgian, English and Russian',
+    year: 2025,
+    role: 'Full-Stack-developer',
+    liveLink: 'https://greencard.ge/',
+  },
   {
     id: 1,
     image: '/project-quiz-wiz.PNG',
@@ -24,7 +34,6 @@ export const projectData: Project[] = [
       'https://github.com/giorgio324/giorgi-kochuashvili-redberry-quizwiz-front',
     extraLink:
       'https://github.com/giorgio324/giorgi-kochuashvili-redberry-quizwiz-back',
-    liveLink: 'https://quiz-wiz.giorgi-kochuashvili.redberryinternship.ge/',
   },
   {
     id: 2,
@@ -32,7 +41,7 @@ export const projectData: Project[] = [
     title: 'Task Manager - Multi page web app that tracks tasks for users',
     description:
       'Developed a full-stack web application using Laravel and the Blade templating engine. Implemented authentication with cookies to securely authenticate users. Utilized the Spatie Translations package to support multiple languages on the site. The project supports basic CRUD operations, along with the ability for users to update their profiles.',
-    year: 2024,
+    year: 2025,
     role: 'Full-Stack-developer',
     githubLink:
       'https://github.com/giorgio324/giorgi-kochuashvili-redberry-todo',
@@ -58,16 +67,5 @@ export const projectData: Project[] = [
     role: 'Front-End-developer',
     githubLink: 'https://github.com/giorgio324/sweeft-gallery',
     liveLink: 'https://unsplash-infinite-gallery.netlify.app/',
-  },
-  {
-    id: 5,
-    image: '/projectImage3.PNG',
-    title: 'Shoppy - a Ecommerce catalog website',
-    description:
-      'Developed a front-end of a web application using technologies including ReactJS for building intuitive UI, Redux Toolkit for state managment,firebase for user authentification, and TailwindCSS for styling components, Created a catalog of ecommerce website using FakestoreAPI. Users can scroll through catalog, view individual item page, add item to cart and view their cart.cart items are persisted in localstorage',
-    year: 2023,
-    role: 'Front-End-developer',
-    githubLink: 'https://github.com/giorgio324/shoppy',
-    liveLink: 'https://shoppyecomerce.netlify.app/',
   },
 ];
